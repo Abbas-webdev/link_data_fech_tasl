@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/output.css">
+    <link rel="stylesheet" href="src/input.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Online Shipping</title>
+</head>
+
+<body class="pt-10 pl-16 pr-16">
+    <header>
+        <nav class="flex items-center justify-between  ">
+            <a href="" class="text-3xl font-bold">ABBASIN Dukanı</a>
+            <div class="">
+                <span href=""><i class="fa-solid fa-magnifying-glass text-2xl text-slate-600"></i></span>
+                <span onclick="openmenu()" href=""><i
+                        class="fa-solid fa-cart-shopping text-2xl text-slate-600"></i></span>
+            </div>
+        </nav>
+
+        <div id="open-bar">
+            <div class="openbar-header w-20">
+                <h3>Səbət</h3>
+                <i onclick="closemenu()" class="fa-solid fa-xmark" id="closeMenu"></i>
+            </div>
+            <hr>
+            <div id="shopingcart" class="flex  flex-col gap-2 p-4 w-full"> </div>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <div style=" justify-content: center;" id="carts" class="mt-7 flex  gap-6 flex-wrap"> </div>
+        </section>
+
+        <section>
+            <div id="u_carts" class="u_carts"></div>
+        </section>
+    </main>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>
