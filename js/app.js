@@ -4,21 +4,21 @@ let openbar = document.getElementById('open-bar');
 
 function openmenu() { openbar.style.right = "0"; }
 function closemenu() { openbar.style.right = '-100%' }
-let fun = [];
+let cart = [];
 let cartarr = [];
 function getData() {
     fetch('https://fakestoreapi.com/products')
         .then((res) => res.json())
         .then((json) => {
-            fun = json;
-            order(fun);
+            cart = json;
+            order(cart);
         })
 }
 getData();
 
-function order(fun) {
+function order() {
     carts.innerHTML = '';
-    fun.map(item => {
+    cart.map(item => {
         carts.innerHTML += `
         <div class=" cart  w-[300px] p-4 shadow-xl rounded-lg " style="box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); 
             border-radius: 10px; padding: 20px;">
@@ -45,7 +45,7 @@ order();
 let shopingcart = document.getElementById('shopingcart');
 
 function addcart(id) {
-    let cartall = fun.find(item => item.id == id);
+    let cartall = cart.find(item => item.id == id);
     if (cartall && !cartarr.some(item => item.id === cartall.id)) {
         cartarr.push(cartall);
         sebetgoster()
@@ -88,23 +88,24 @@ function sebetgoster() {
     })
 }
 let userContainer = document.getElementById('u_carts');
-let uss = [];
+let kamanda = [];
 function getUser() {
-    fetch('https://jsonplaceholder.typicode.com/users')
+    fetch('https://694b7f1126e8707720683fd0.mockapi.io/gmvb/web_taktuk_gm')
         .then((res) => res.json())
-        .then((json) => {
-            uss = json;
-            shadowUser(uss);
-        })
+        .then((team) => {
+      kamanda= team;
+      shadowUser()
+               })
 }
 
-function shadowUser(uss) {
+function shadowUser() {
     userContainer.innerHTML = '';
-    uss.map(item => {
+    kamanda.map(item => {
         userContainer.innerHTML += `
         <div class="u_cart">
+        <img src="${item.img}" alt="">
         <h4>${item.name}</h4>
-        <h4>${item.username}</h4>
+        <h4>${item.surname}</h4>
         </div>
         `;
     });
